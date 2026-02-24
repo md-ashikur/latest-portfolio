@@ -13,22 +13,10 @@ import {
 
 gsap.registerPlugin(ScrollTrigger);
 
-const skillGroups = [
-  {
-    label: "Expertise",
-    color: "bg-primary/15 text-emerald-700 border-primary/40",
-    skills: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "React.js", "Next.js", "Redux"],
-  },
-  {
-    label: "Comfortable",
-    color: "bg-blue-50 text-blue-700 border-blue-200",
-    skills: ["MongoDB", "MySQL", "Firebase", "REST API", "Express.js", "Zod"],
-  },
-  {
-    label: "Tools",
-    color: "bg-purple-50 text-purple-700 border-purple-200",
-    skills: ["VS Code", "Git", "Vercel", "Figma", "Brevo"],
-  },
+const skills = [
+  "React", "Next.js", "TypeScript", "JavaScript",
+  "Node.js", "Express", "MongoDB", "PostgreSQL",
+  "Tailwind CSS", "GSAP", "REST APIs", "Git",
 ];
 
 const stats = [
@@ -167,11 +155,11 @@ const About = () => {
 
         {/* ═══════════════════════  HEADING  ══════════════════════════════ */}
         <div ref={headingRef} className="text-center mb-20">
-          <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-primary mb-3">
+          <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-emerald-500 mb-3">
             Who I Am
           </span>
           <h2 className="text-4xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
-            About{" "}
+            About
             <span className="relative inline-block">
               Me
               <span className="absolute left-0 -bottom-1 w-full h-1.25 rounded-full bg-primary" />
@@ -184,18 +172,13 @@ const About = () => {
 
           <div ref={bioRef}>
             <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-5">
-              A Passionate Frontend Developer
+              Building fast, reliable web experiences
             </h3>
             <p className="text-gray-500 text-lg leading-8 mb-5">
-              Hi! I&apos;m{" "}
-              <span className="font-semibold text-gray-800">Md. Ashikur Rahman</span>, a
-              frontend-focused web developer with hands-on industry experience building
-              fast, scalable and visually compelling applications using React, Next.js and
-              modern web technologies.
+              Hi! I&apos;m <span className="font-semibold text-gray-800">Md. Ashikur Rahman</span>. I design and ship production-grade web applications using React, Next.js, and modern web technologies. My work emphasises performance, accessibility, and maintainable architecture to deliver delightful user experiences.
             </p>
             <p className="text-gray-500 text-lg leading-8 mb-8">
-              I&apos;m currently seeking a full-time frontend role where I can bring
-              precision, performance and a great user experience to every project.
+              I&apos;m actively pursuing opportunities to solve challenging problems, influence product decisions, and grow within collaborative teams.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -209,7 +192,7 @@ const About = () => {
               <a
                 href="/assets/files/Resume(24-02-26).pdf"
                 download
-                className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-primary text-primary text-sm font-semibold hover:bg-primary hover:text-black transition-colors duration-300"
+                className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-emerald-500 text-emerald-500 text-sm font-semibold hover:bg-emerald-500 hover:text-black transition-colors duration-300"
               >
                 ↓ Download CV
               </a>
@@ -236,7 +219,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* ═══════════════════════  STATS  ════════════════════════════════ */}
+        {/* ══════════════════  STATS  ══════════════ */}
         <div ref={statsRef} className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
           {stats.map((s, i) => (
             <div key={s.label}
@@ -252,33 +235,27 @@ const About = () => {
           ))}
         </div>
 
-        {/* ═══════════════════════  SKILLS  ═══════════════════════════════ */}
+        {/* ═════════  SKILLS  ══════════════ */}
         <div ref={skillsRef} className="mb-24">
-          <h3 className="text-center text-2xl font-bold text-gray-900 mb-3">
-            Skills &amp; Technologies
+          <h3 className="text-center text-2xl font-bold text-gray-900 mb-10">
+            Tech Stack &amp; Tools
           </h3>
-          <p className="text-center text-gray-400 text-sm mb-10">Colour-coded by proficiency level</p>
-          <div className="space-y-6">
-            {skillGroups.map((group) => (
-              <div key={group.label} className="flex flex-wrap items-center gap-3">
-                <span className="text-xs font-bold tracking-widest uppercase text-gray-400 w-24 shrink-0">
-                  {group.label}
-                </span>
-                {group.skills.map((skill) => (
-                  <span key={skill}
-                    className={`skill-tag cursor-default select-none px-4 py-1.5 rounded-full text-sm font-semibold border transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5 ${group.color}`}>
-                    {skill}
-                  </span>
-                ))}
-              </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {skills.map((skill) => (
+              <span
+                key={skill}
+                className="skill-tag cursor-default select-none px-5 py-2 rounded-full text-sm font-semibold border border-gray-200 text-gray-700 hover:border-emerald-500 hover:text-emerald-500 hover:bg-[#76F5BC0f] transition-colors duration-300"
+              >
+                {skill}
+              </span>
             ))}
           </div>
         </div>
 
-        {/* ═══════════════════  EXPERIENCE + EDUCATION  ═══════════════════ */}
+        {/* ══════════  EXPERIENCE + EDUCATION  ══════════ */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
 
-          {/* ── Experience ─────────────────────────────────────────────── */}
+          {/* ── Experience ─────── */}
           <div ref={expRef}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 rounded-xl flex items-center justify-center"
@@ -300,7 +277,7 @@ const About = () => {
                     <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
                       <div>
                         <h4 className="text-lg font-bold text-gray-900">{exp.role}</h4>
-                        <p className="text-primary font-semibold text-sm">{exp.company}</p>
+                        <p className="text-emerald-500 font-semibold text-sm">{exp.company}</p>
                       </div>
                       <div className="flex flex-col items-end gap-1.5">
                         <span className="text-xs text-gray-400 font-medium">{exp.period}</span>
@@ -323,7 +300,7 @@ const About = () => {
             </div>
           </div>
 
-          {/* ── Education ──────────────────────────────────────────────── */}
+          {/* ── Education ──────────── */}
           <div ref={eduRef}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 rounded-xl flex items-center justify-center"
