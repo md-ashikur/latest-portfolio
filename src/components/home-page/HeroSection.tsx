@@ -4,19 +4,19 @@ import ashik from "../../../public/assets/images/ashik.png";
 
 const HeroSection = () => {
   return (
-    <section className="bg-primary text-white min-h-[84vh] relative overflow-hidden flex items-center">
-      <div className="absolute inset-0 grid-overlay pointer-events-none" />
 
-      <div className=" mx-auto px-6 lg:px-12 max-w-7xl z-10">
+    
+    <section className="hero-background pt-20 text-white overflow-hidden ">
+  
+      <div className=" mx-auto px-5 lg:px-0 max-w-7xl ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
-            <p className="text-sm mb-4 uppercase tracking-wider text-red-500">
+            <p className="text-4xl mb-4 uppercase tracking-wider ">
               I AM <span className="text-primary font-semibold">MD. ASHIKUR RAHMAN</span>
             </p>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
-              AN ENTHUSIASTIC WEB
-              <br />APPLICATION DEVELOPER
+            <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight">
+              AN ENTHUSIASTIC WEB APPLICATION DEVELOPER
             </h1>
 
             <div className="mt-8 flex items-center gap-4">
@@ -33,8 +33,8 @@ const HeroSection = () => {
           </div>
 
           <div className="flex justify-end relative">
-            <div className="w-[320px] md:w-[420px] lg:w-[520px] relative grayscale border border-white/6 rounded-tl-[80px] overflow-hidden">
-              <Image src={ashik} alt="Ashik" fill sizes="(max-width: 768px) 90vw, 520px" className="object-cover" />
+            <div className="relative grayscale ">
+              <Image src={ashik} alt="Ashik" className="h-auto w-full" />
             </div>
           </div>
         </div>
