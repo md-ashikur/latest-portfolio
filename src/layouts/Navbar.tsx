@@ -96,7 +96,7 @@ const Navbar = () => {
     <div>
       <header
         ref={navbarRef}
-        className={`w-full fixed top-0 left-0 z-10 ${isScrolled ? "bg-black/40 backdrop-blur-md border-b border-white/10" : "bg-transparent"}`}
+        className={`w-full fixed top-0 left-0 z-40 ${isScrolled ? "bg-black/40 backdrop-blur-md border-b border-white/10" : "bg-transparent"}`}
         aria-label="Main navigation"
       >
         <div className="flex justify-between items-center max-w-7xl mx-auto px-4 py-4">

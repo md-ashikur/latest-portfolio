@@ -12,6 +12,14 @@
   --color-background: #3D3D45;
   --color-foreground: #ffffff;
   
+  --color-black-100: #ffffff47;
+  --color-black-200: #76f5bc24;
+  --color-black-300: #ffffff0d;
+  --color-black-700: #060818d1;
+  --color-black-800: #0000008a;
+
+
+
   /* letter spacing  */
    --tracking-3: 0.08em;
 }

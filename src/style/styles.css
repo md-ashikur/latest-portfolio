@@ -1,21 +1,71 @@
 /* Hero background visuals: radial spotlight, deep gradient, noise and vignette */
 .hero-background {
   position: relative;
-  background: radial-gradient(600px 400px at 18% 8%, rgba(79, 70, 229, 0.22) 0%, rgba(59, 130, 246, 0.12) 12%, transparent 25%),
+  background: radial-gradient(250vh 100vw at 10% 15%, rgba(79, 70, 229, 0.22) 0%, rgba(14, 100, 238, 0.12) 12%, transparent 25%),
     radial-gradient(800px 600px at 85% 20%, rgba(139, 92, 246, 0.08) 0%, rgba(99, 102, 241, 0.06) 10%, transparent 30%),
     linear-gradient(180deg, #03041a 0%, #071036 55%, #04102a 100%);
   overflow: hidden;
+  
 }
 
 .hero-background::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.02), transparent 25%),
-    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 75%);
+  background-image: radial-gradient(ellipse at center, rgba(6, 13, 39, 0.794), transparent 50%),
+    linear-gradient(180deg, #0000008a 0%, #00000056 75%);
   pointer-events: none;
   z-index: 0;
 }
+
+.bg-gradiant {
+  background: radial-gradient(rgba(47, 61, 128, 0.774) 1%,  rgba(3, 4, 12, 0) 60%);
+  width: 90vw;
+  height: 160vh;
+  position: absolute;
+  top: -60vh;
+  left: -40vw;
+  z-index: 1;
+}
+
+
+
+#content {
+ box-shadow: 0 0 0 0 hsla(234,55%,3%,1) inset;
+background-color: transparent;
+background-image: linear-gradient(
+    0deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.05) 5%,
+    rgba(255, 255, 255, 0.05) 6%,
+    transparent 26%,
+    transparent 76%,
+    rgba(255, 255, 255, 0.05) 5%,
+    rgba(255, 255, 255, 0.05) 6%,
+    transparent 77%,
+    transparent
+  ),
+  linear-gradient(
+    90deg,
+    transparent 26%,
+    rgba(255, 255, 255, 0.05) 5%,
+    rgba(255, 255, 255, 0.05) 6%,
+    transparent 27%,
+    transparent 76%,
+    rgba(255, 255, 255, 0.05) 5%,
+    rgba(255, 255, 255, 0.05) 6%,
+    transparent 77%,
+    transparent
+  );
+height: 100%;
+background-size: 300px 300px;
+z-index: -2;
+
+}
+
+
+
+
 
 
 /* NAVBAR ======= */
@@ -61,7 +111,7 @@
   width: 38px;
   height: 38px;
   border: 1px solid #ffffff1a;
-  background: rgba(255, 255, 255, 0.05);
+  background: #ffffff0d;
   border-radius: 10px;
   cursor: pointer;
   color: rgba(255, 255, 255, 0.7);
@@ -69,7 +119,7 @@
 }
 
 .drawer-close-btn:hover {
-  background: rgba(118, 245, 188, 0.12);
+  background: #76f5bc1f;
   border-color: rgba(118, 245, 188, 0.35);
   color: #76F5BC;
 }
