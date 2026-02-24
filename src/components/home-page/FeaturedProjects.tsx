@@ -55,45 +55,44 @@ const FeaturedProjects = () => {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative bg-white py-24 lg:py-32 overflow-hidden"
-    >
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+    <section ref={sectionRef} className="relative bg-white">
+      <div className="hero-background">
+        <section id="content">
+          <div className="relative text-white z-30 mx-auto max-w-7xl px-5 lg:px-10 py-24 lg:py-32">
+            <div ref={headingRef} className="text-center mb-16">
+              <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-primary mb-3">
+                Portfolio
+              </span>
+              <h2 className="text-4xl lg:text-6xl font-extrabold text-white leading-tight mb-4">
+                Featured{" "}
+                <span className="relative inline-block">
+                  Projects
+                  <span className="absolute left-0 -bottom-1 w-full h-1.25 rounded-full bg-primary" />
+                </span>
+              </h2>
+              <p className="text-white/80 text-lg max-w-2xl mx-auto">
+                A showcase of my recent work building scalable web applications
+              </p>
+            </div>
 
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-10">
-        <div ref={headingRef} className="text-center mb-16">
-          <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-primary mb-3">
-            Portfolio
-          </span>
-          <h2 className="text-4xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
-            Featured{" "}
-            <span className="relative inline-block">
-              Projects
-              <span className="absolute left-0 -bottom-1 w-full h-1.25 rounded-full bg-primary" />
-            </span>
-          </h2>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            A showcase of my recent work building scalable web applications
-          </p>
-        </div>
+            <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {featuredProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
 
-        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {featuredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
-
-        <div className="text-center">
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-primary text-primary font-semibold hover:bg-primary hover:text-black transition-all duration-300 group"
-          >
-            View All Projects
-            <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-          </Link>
-        </div>
+            <div className="text-center">
+              <Link
+                href="/portfolio"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-white/20 text-white font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 group"
+              >
+                View All Projects
+                <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+            </div>
+          </div>
+        </section>
+        <div className="bg-gradiant"></div>
       </div>
     </section>
   );
