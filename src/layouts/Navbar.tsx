@@ -142,7 +142,7 @@ const Navbar = () => {
       <nav
         ref={drawerRef}
         id="side-drawer"
-        className="border-l border-[#76f5bc24] bg-[#060818d1] min-w-85 flex flex-col fixed top-0 right-0 bottom-0 z-50 backdrop-blur-md side-drawer"
+        className="border-l border-black-200 bg-black-700 min-w-85 flex flex-col fixed top-0 right-0 bottom-0 z-50 backdrop-blur-md side-drawer"
         style={{ visibility: "hidden" }}
         role="dialog"
         aria-modal="true"
@@ -189,7 +189,7 @@ const Navbar = () => {
 
         {/* Drawer footer */}
         <div className="flex items-center gap-3 py-6 px-7 shrink-0">
-          <p className="text-xs text-[#ffffff47] tracking-[0.04em]">Let&apos;s build something great.</p>
+          <p className="text-xs text-black-100 tracking-[0.04em]">Let&apos;s build something great.</p>
           <div className="drawer-footer__dot" />
         </div>
 
