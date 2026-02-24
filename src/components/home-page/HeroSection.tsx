@@ -11,7 +11,7 @@ const HeroSection = () => {
       <div className=" mx-auto px-5 lg:px-0 max-w-7xl ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
-            <p className="text-4xl mb-4 uppercase tracking-wider ">
+            <p className="text-4xl font-bold mb-4 uppercase tracking-wider ">
               I AM <span className="text-primary font-semibold">MD. ASHIKUR RAHMAN</span>
             </p>
 
@@ -33,7 +33,7 @@ const HeroSection = () => {
           </div>
 
           <div className="flex justify-end relative">
-            <div className="relative grayscale ">
+            <div className="relative grayscale hover:grayscale-0 transition duration-500 ">
               <Image src={ashik} alt="Ashik" className="h-auto w-full" />
             </div>
           </div>

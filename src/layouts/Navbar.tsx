@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import { useGSAP } from "@gsap/react";
 import {
   animateNavbarMount,
   animateLogoEntrance,
@@ -21,43 +20,49 @@ interface NavLink {
 }
 
 const NAV_LINKS: NavLink[] = [
-  { label: "About",     href: "#about",     number: "01" },
+  { label: "About", href: "#about", number: "01" },
   { label: "Portfolio", href: "#portfolio", number: "02" },
-  { label: "Contact",   href: "#contact",   number: "03" },
+  { label: "Contact", href: "#contact", number: "03" },
 ];
 
 
 const Navbar = () => {
-  const [isOpen, setIsOpen]         = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   // DOM refs
-  const navbarRef   = useRef<HTMLElement>(null);
-  const logoRef     = useRef<HTMLDivElement>(null);
-  const burgerRef   = useRef<HTMLButtonElement>(null);
-  const line1Ref    = useRef<HTMLSpanElement>(null);
-  const line2Ref    = useRef<HTMLSpanElement>(null);
-  const line3Ref    = useRef<HTMLSpanElement>(null);
-  const drawerRef   = useRef<HTMLDivElement>(null);
-  const overlayRef  = useRef<HTMLDivElement>(null);
+  const navbarRef = useRef<HTMLElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
+  const burgerRef = useRef<HTMLButtonElement>(null);
+  const line1Ref = useRef<HTMLSpanElement>(null);
+  const line2Ref = useRef<HTMLSpanElement>(null);
+  const line3Ref = useRef<HTMLSpanElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
   const navLinksRef = useRef<HTMLDivElement>(null);
 
-  
-  useGSAP(() => {
+ 
+  useEffect(() => {
+    const initialScrolled = typeof window !== "undefined" && window.scrollY > 10;
+
+    if (initialScrolled) animateNavbarShrink(navbarRef.current);
+
     animateNavbarMount(navbarRef.current);
     animateLogoEntrance(logoRef.current);
-  }, []);
 
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 10;
+      if (scrolled !== isScrolled) setIsScrolled(scrolled);
+      if (scrolled) animateNavbarShrink(navbarRef.current);
+      else animateNavbarExpand(navbarRef.current);
+    };
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 10)
-        }
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
 
-  // ── Open drawer ───────────────────────────────────────────────────────────
+  }, [isScrolled]);
+
+  // ── Open drawer 
   const openDrawer = useCallback(() => {
     setIsOpen(true);
     document.body.style.overflow = "hidden";
@@ -71,7 +76,6 @@ const Navbar = () => {
     animateDrawerClose(drawerRef.current, overlayRef.current, () => {
       setIsOpen(false);
       document.body.style.overflow = "";
-      // Hide overlay after animation
       if (overlayRef.current) overlayRef.current.style.display = "none";
     });
   }, []);
@@ -79,7 +83,7 @@ const Navbar = () => {
   // ── Toggle 
   const toggleMenu = useCallback(() => {
     if (!isOpen) openDrawer();
-    else         closeDrawer();
+    else closeDrawer();
   }, [isOpen, openDrawer, closeDrawer]);
 
   // ── Close on nav link click 
@@ -87,19 +91,19 @@ const Navbar = () => {
     closeDrawer();
   }, [closeDrawer]);
 
-  
- 
-
 
   return (
     <div>
-    
-      <nav className={`w-full fixed top-0 left-0 z-10 ${isScrolled ? "bg-black/40 backdrop-blur-md border-b border-white/10" : "bg-transparent"} " aria-label="Main navigation`}>
+      <header
+        ref={navbarRef}
+        className={`w-full fixed top-0 left-0 z-10 ${isScrolled ? "bg-black/40 backdrop-blur-md border-b border-white/10" : "bg-transparent"}`}
+        aria-label="Main navigation"
+      >
         <div className="flex justify-between items-center max-w-7xl mx-auto px-4 py-4">
 
           {/* Logo  */}
-          <Link href="#" className="navbar-logo" aria-label="Home">
-            <div className="logo-word text-3xl" aria-hidden="true">
+          <Link href="/" className="navbar-logo" aria-label="Home">
+            <div ref={logoRef} className="font-bold text-white hover:text-primary text-3xl" aria-hidden="true">
               {"Ashik".split("").map((char, i) => (
                 <span key={i} className="logo-char">
                   {char}
@@ -113,22 +117,22 @@ const Navbar = () => {
           <button
             ref={burgerRef}
             onClick={toggleMenu}
-            className="burger-btn"
+            className="burger-btn flex flex-col gap-1 p-2 cursor-pointer"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             aria-controls="side-drawer"
           >
             <span ref={line1Ref} className="burger-line" />
-            <span ref={line2Ref} className="burger-line burger-line--mid" />
+            <span ref={line2Ref} className="burger-line " />
             <span ref={line3Ref} className="burger-line" />
           </button>
         </div>
-      </nav>
+      </header>
 
       {/* ── Backdrop overlay */}
       <div
         ref={overlayRef}
-        className="drawer-overlay backdrop-blur-md"
+        className="backdrop-blur-md cursor-pointer fixed inset-0 z-40 bg-[#02041299]"
         style={{ display: "none", opacity: 0 }}
         onClick={closeDrawer}
         aria-hidden="true"
@@ -138,15 +142,15 @@ const Navbar = () => {
       <nav
         ref={drawerRef}
         id="side-drawer"
-        className="side-drawer min-w-85 flex flex-col fixed top-0 right-0 bottom-0 z-50 backdrop-blur-md"
+        className="border-l border-[#76f5bc24] bg-[#060818d1] min-w-85 flex flex-col fixed top-0 right-0 bottom-0 z-50 backdrop-blur-md side-drawer"
         style={{ visibility: "hidden" }}
         role="dialog"
         aria-modal="true"
         aria-label="Navigation menu"
       >
         {/* Drawer header */}
-        <div className="flex justify-between items-center px-6 py-4">
-          
+        <div className="w-full flex justify-between items-center px-6 py-4">
+
           <button
             onClick={closeDrawer}
             className="drawer-close-btn"
@@ -154,7 +158,7 @@ const Navbar = () => {
           >
             <span className="drawer-close-icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+                <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
               </svg>
             </span>
           </button>
@@ -164,7 +168,7 @@ const Navbar = () => {
         <div className="drawer-divider" />
 
         {/* Nav links */}
-        <div ref={navLinksRef} className="flex flex-col flex-1 gap-6 mt-10 px-6" role="menu">
+        <div ref={navLinksRef} className="flex flex-col flex-1 gap-4 mt-10 px-6" role="menu">
           {NAV_LINKS.map(({ label, href, number }) => (
             <Link
               key={label}
@@ -172,11 +176,11 @@ const Navbar = () => {
               className="nav-item flex items-center gap-4 px-4 py-3"
               onClick={handleLinkClick}
             >
-              <span className="nav-item__number">{number}</span>
-              <span className="nav-item__label">{label}</span>
-              <span className="nav-item__arrow" aria-hidden="true">
+              <span className="text-primary text-xs tracking-3 shrink-0">{number}</span>
+              <span className="text-white nav-item__label flex-1 text-xl font-bold leading-none">{label}</span>
+              <span className="nav-item__arrow shrink-0 flex items-center" aria-hidden="true">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <path d="M3 9h12M10 4l5 5-5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M3 9h12M10 4l5 5-5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
             </Link>
@@ -184,8 +188,8 @@ const Navbar = () => {
         </div>
 
         {/* Drawer footer */}
-        <div className="drawer-footer">
-          <p className="drawer-footer__text">Let&apos;s build something great.</p>
+        <div className="flex items-center gap-3 py-6 px-7 shrink-0">
+          <p className="text-xs text-[#ffffff47] tracking-[0.04em]">Let&apos;s build something great.</p>
           <div className="drawer-footer__dot" />
         </div>
 

@@ -12,4 +12,6 @@
   --color-background: #3D3D45;
   --color-foreground: #ffffff;
   
+  /* letter spacing  */
+   --tracking-3: 0.08em;
 }
