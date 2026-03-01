@@ -213,9 +213,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Decorative Corner Elements */}
-      <div className="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-primary/20 rounded-tl-3xl" />
-      <div className="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-primary/20 rounded-br-3xl" />
+    
     </footer>
   );
 };

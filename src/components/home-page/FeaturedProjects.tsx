@@ -57,7 +57,7 @@ const FeaturedProjects = () => {
   return (
     <section ref={sectionRef} className="relative bg-white">
       <div className="hero-background">
-        <section id="content">
+        <section className="content">
           <div className="relative text-white z-30 mx-auto max-w-7xl px-5 lg:px-10 py-24 lg:py-32">
             <div ref={headingRef} className="text-center mb-16">
               <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-primary mb-3">

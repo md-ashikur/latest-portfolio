@@ -13,7 +13,7 @@ import { HiArrowLeft } from "react-icons/hi2";
 gsap.registerPlugin(ScrollTrigger);
 
 const allTags = Array.from(
-  new Set(projects.flatMap((p) => p.tags))
+  new Set(projects.flatMap((p) => p.category))
 ).sort();
 
 const Portfolio = () => {
@@ -26,7 +26,7 @@ const Portfolio = () => {
 
   const filteredProjects = useMemo(() => {
     if (activeFilter === "All") return projects;
-    return projects.filter((p) => p.tags.includes(activeFilter));
+    return projects.filter((p) => p.category.includes(activeFilter));
   }, [activeFilter]);
 
   useEffect(() => {
@@ -69,7 +69,7 @@ const Portfolio = () => {
       className="relative bg-white min-h-screen"
     >
       <div className="hero-background">
-        <section id="content">
+        <section className="content">
           <div className="relative text-white z-30 mx-auto px-5 lg:px-10 max-w-7xl py-16 lg:py-24">
             <Link
               href="/"
@@ -111,17 +111,17 @@ const Portfolio = () => {
           >
             All Projects
           </button>
-          {allTags.map((tag) => (
+          {allTags.map((category) => (
             <button
-              key={tag}
-              onClick={() => setActiveFilter(tag)}
+              key={category}
+              onClick={() => setActiveFilter(category)}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
-                activeFilter === tag
+                activeFilter === category
                   ? "bg-primary text-black shadow-lg shadow-primary/30"
                   : "bg-gray-50 text-gray-700 border border-gray-200 hover:border-primary hover:text-primary"
               }`}
             >
-              {tag}
+              {category}
             </button>
           ))}
         </div>

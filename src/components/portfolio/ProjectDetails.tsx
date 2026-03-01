@@ -49,7 +49,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
   return (
     <section ref={sectionRef} className="relative bg-white min-h-screen">
       <div className="hero-background">
-        <section id="content">
+        <section className="content">
           <div className="relative text-white z-30 mx-auto px-5 lg:px-10 max-w-7xl py-16 lg:py-24">
             <Link
               href="/portfolio"
@@ -116,7 +116,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
               </div>
 
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                <div className="relative aspect-video bg-gray-900">
+                <div className="relative aspect-video bg-gray-900 hover:scale-105 transition-transform duration-300">
                   <Image
                     src={project.images[activeImage]}
                     alt={`${project.title} - Image ${activeImage + 1}`}

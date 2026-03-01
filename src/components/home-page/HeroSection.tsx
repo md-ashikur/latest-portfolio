@@ -9,7 +9,7 @@ const HeroSection = () => {
 
     <section className="hero-background">
      
-      <section id="content" >
+      <section className="content" >
       <div className="relative text-white z-30 mx-auto px-5 lg:px-0 max-w-7xl ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-20">
           <div className="my-5">

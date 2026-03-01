@@ -25,8 +25,8 @@ const ProjectCard = ({ project, variant = "default" }: ProjectCardProps) => {
         <div className="absolute top-4 right-4 z-10 flex flex-col gap-2">
           <span className={`px-3 py-1 text-xs font-bold rounded-full backdrop-blur-sm shadow-lg ${
             isGlass
-              ? "bg-white/20 text-white border border-white/30"
-              : "bg-white/95 text-gray-700 border border-gray-100"
+              ? "bg-secondary/20 text-black border border-white/30"
+              : "bg-white/95 text-secondary border border-gray-100"
           }`}>
             {project.category}
           </span>
