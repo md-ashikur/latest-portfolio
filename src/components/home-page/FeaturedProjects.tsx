@@ -64,7 +64,7 @@ const FeaturedProjects = () => {
                 Portfolio
               </span>
               <h2 className="text-4xl lg:text-6xl font-extrabold text-white leading-tight mb-4">
-                Featured{" "}
+                Featured
                 <span className="relative inline-block">
                   Projects
                   <span className="absolute left-0 -bottom-1 w-full h-1.25 rounded-full bg-primary" />
@@ -92,7 +92,7 @@ const FeaturedProjects = () => {
             </div>
           </div>
         </section>
-        <div className="bg-gradiant"></div>
+        <div className="bg-gradient"></div>
       </div>
     </section>
   );

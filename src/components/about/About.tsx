@@ -370,6 +370,27 @@ const About = () => {
           </div>
         </div>
 
+        {/* ═══════════════════  KNOW MORE BUTTON  ═══════════════════════ */}
+        <div className="mt-20 text-center">
+          <a
+            href="/about"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-lg bg-linear-to-r from-primary to-emerald-500 text-gray-900 hover:shadow-xl hover:scale-105 transition-all duration-300 group"
+          >
+            <span>Know More About Me</span>
+            <svg
+              className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <p className="text-sm text-gray-400 mt-4">
+            Explore my detailed achievements, certifications, and leadership experience
+          </p>
+        </div>
+
       </div>
     </section>
   );

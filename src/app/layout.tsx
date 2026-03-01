@@ -4,7 +4,8 @@ import "./globals.css";
 import "../style/styles.css";
 import Navbar from "@/layouts/Navbar";
 import Footer from "@/layouts/Footer.";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import LenisScroll from "@/components/common/LenisScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
+        <LenisScroll />
         <Navbar />
         {children}
         <Footer />
