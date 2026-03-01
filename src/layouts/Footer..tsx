@@ -49,10 +49,10 @@ const Footer = () => {
   ];
 
   const socials = [
-    { name: "GitHub", icon: FaGithub, href: "https://github.com" },
-    { name: "LinkedIn", icon: FaLinkedin, href: "https://linkedin.com" },
-    { name: "Twitter", icon: FaTwitter, href: "https://twitter.com" },
-    { name: "Facebook", icon: FaFacebook, href: "https://facebook.com" },
+    { name: "GitHub", icon: FaGithub, href: "https://github.com/md-ashikur" },
+    { name: "LinkedIn", icon: FaLinkedin, href: "https://linkedin.com/in/md-ashikur-rahman" },
+    { name: "Twitter", icon: FaTwitter, href: "https://twitter.com/md_ashikur1" },
+    { name: "Facebook", icon: FaFacebook, href: "https://facebook.com/ashikur.rahman999" },
   ];
 
   return (
