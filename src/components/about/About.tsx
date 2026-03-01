@@ -174,10 +174,10 @@ const About = () => {
             <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-5">
               Building fast, reliable web experiences
             </h3>
-            <p className="text-gray-500 text-lg leading-8 mb-5">
+            <p className="text-gray-500 text-lg text-justify leading-8 mb-5">
               Hi! I&apos;m <span className="font-semibold text-gray-800">Md. Ashikur Rahman</span>. I design and ship production-grade web applications using React, Next.js, and modern web technologies. My work emphasises performance, accessibility, and maintainable architecture to deliver delightful user experiences.
             </p>
-            <p className="text-gray-500 text-lg leading-8 mb-8">
+            <p className="text-gray-500 text-lg text-justify leading-8 mb-8">
               I&apos;m actively pursuing opportunities to solve challenging problems, influence product decisions, and grow within collaborative teams.
             </p>
 
@@ -190,9 +190,9 @@ const About = () => {
                 <span className="text-sm font-medium text-gray-700">Open to new opportunities</span>
               </div>
               <a
-                href="/assets/files/Resume(24-02-26).pdf"
+                href="/assets/files/Ashik-Resume.pdf"
                 download
-                className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-emerald-500 text-emerald-500 text-sm font-semibold hover:bg-emerald-500 hover:text-black transition-colors duration-300"
+                className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-emerald-500 text-emerald-500 text-sm font-semibold hover:bg-emerald-500 hover:text-white transition-colors duration-300"
               >
                 ↓ Download CV
               </a>

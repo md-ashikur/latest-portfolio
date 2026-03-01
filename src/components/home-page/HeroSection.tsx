@@ -22,7 +22,7 @@ const HeroSection = () => {
             </h1>
 
             <div className="mt-5 flex items-center gap-4">
-              <a href="/assets/files/Resume(24-02-26).pdf" className="px-4 py-2 border border-primary rounded-full hover:bg-primary hover:text-black transition-colors duration-300" download>
+              <a href="/assets/files/Ashik-Resume.pdf" className="px-4 py-2 border border-primary rounded-full hover:bg-primary hover:text-black transition-colors duration-300" download>
                 Download Resume
               </a>
 
