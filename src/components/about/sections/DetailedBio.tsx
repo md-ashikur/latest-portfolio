@@ -52,7 +52,7 @@ const DetailedBio = () => {
             href="https://www.linkedin.com/in/md-ashikur-rahman/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-linear-to-r from-primary to-primary-200 text-white font-bold hover:shadow-lg hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-linear-to-r from-primary to-emerald-500 text-white font-bold hover:shadow-lg hover:scale-105 transition-all duration-300"
           >
             <span>Let&apos;s Connect</span>
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -18,7 +18,7 @@ export const achievements = [
   {
     id: 3,
     title: "Pundra University Programming Contest, 2023",
-    organization: "Pundra University",
+    organization: "Pundra University of Science & Technology, Bogura",
     date: "2023",
     description: "Secured 2nd Runner-up position in university programming contest.",
     certificateImage: "/assets/images/certificate/Pundra University Programming contest -2023.jpg",

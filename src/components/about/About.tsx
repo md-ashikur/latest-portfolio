@@ -374,7 +374,7 @@ const About = () => {
         <div className="mt-20 text-center">
           <a
             href="/about"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-lg bg-linear-to-r from-primary to-emerald-500 text-gray-900 hover:shadow-xl hover:scale-105 transition-all duration-300 group"
+            className="inline-flex items-center gap-3 px-8 py-2 rounded-full font-bold text-lg bg-linear-to-r from-primary to-emerald-500 text-white hover:shadow-xl hover:scale-105 transition-all duration-300 group"
           >
             <span>Know More About Me</span>
             <svg

@@ -1,11 +1,26 @@
 "use client";
 
-
+import { useState } from "react";
 import Image from "next/image";
 import { HiOutlineTrophy, HiSparkles } from "react-icons/hi2";
 import { achievements } from "@/data/aboutData";
+import AchievementsModal from "./AchievementsModal";
 
 const Achievements = () => {
+  const [selectedAchievement, setSelectedAchievement] = useState<
+    (typeof achievements)[number] | null
+  >(null);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = (a: (typeof achievements)[number]) => {
+    setSelectedAchievement(a);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedAchievement(null);
+  };
   return (
     <section className="relative py-24 bg-linear-to-br from-amber-50/30 via-white to-orange-50/30 overflow-hidden">
       {/* Animated background elements */}
@@ -17,15 +32,15 @@ const Achievements = () => {
       <div className="relative max-w-7xl mx-auto px-5 lg:px-10">
         {/* Section Header */}
         <div className="mb-20 text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-linear-to-br from-amber-400 to-orange-500 mb-6 shadow-lg relative group">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-linear-to-br from-primary to-emerald-500 mb-6 shadow-lg relative group ">
             <HiOutlineTrophy className="text-white text-4xl relative z-10" />
-            <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-amber-300 to-orange-400 opacity-0 group-hover:opacity-100 blur transition duration-300" />
+            <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-primary-200 to-emerald-500 opacity-0 group-hover:opacity-100 blur transition duration-300" />
           </div>
           
-          <h2 className="text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">
+          <h2 className="text-4xl lg:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">
             Achievements
           </h2>
-          <div className="w-32 h-1.5 bg-linear-to-r from-amber-400 via-orange-400 to-transparent mx-auto rounded-full mb-4" />
+          <div className="w-32 h-1.5 bg-primary mx-auto rounded-full mb-4" />
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
             Recognition and accomplishments in competitive programming and tech events
           </p>
@@ -38,11 +53,16 @@ const Achievements = () => {
               key={achievement.id}
               className="group relative"
               style={{ animationDelay: `${index * 100}ms` }}
+              role="button"
+              tabIndex={0}
+              onClick={() => openModal(achievement)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") openModal(achievement);
+              }}
             >
-              {/* Glow effect on hover */}
-              <div className="absolute -inset-1 bg-linear-to-r from-amber-400 to-orange-500 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition duration-500" />
+            
               
-              <div className="relative h-full rounded-3xl border border-amber-100 bg-white p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 overflow-hidden">
+              <div className="relative h-full rounded-3xl border border-amber-100 bg-white p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 overflow-hidden cursor-pointer">
                 {/* Top gradient bar */}
                 <div className="absolute top-0 left-0 right-0 h-1.5 bg-linear-to-r from-amber-400 via-orange-400 to-amber-400 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                 
@@ -96,6 +116,12 @@ const Achievements = () => {
             </div>
           ))}
         </div>
+        {/* Modal */}
+        <AchievementsModal
+          open={modalOpen}
+          onClose={closeModal}
+          achievement={selectedAchievement}
+        />
       </div>
     </section>
   );
