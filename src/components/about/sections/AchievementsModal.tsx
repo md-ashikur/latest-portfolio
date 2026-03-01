@@ -71,7 +71,7 @@ const AchievementsModal: React.FC<Props> = ({ open, onClose, achievement }) => {
 
           <div className="p-4 flex flex-col justify-between">
             <div>
-              <h3 className="lg:text-2xl text-xl font-extrabold mb-2 text-black">{achievement.title}</h3>
+              <h3 className="text-2xl font-extrabold mb-2 text-black">{achievement.title}</h3>
               <div className="flex items-center gap-3 text-sm text-gray-700 mb-4">
                  <span>{achievement.organization}</span>
                 {achievement.date && <span> • {achievement.date}</span>}
@@ -86,7 +86,7 @@ const AchievementsModal: React.FC<Props> = ({ open, onClose, achievement }) => {
               )}
             </div>
 
-            <div className="mt-6 flex items-stretch gap-3">
+            <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <a
                 href={achievement.certificateImage || "/assets/images/certificate/placeholder.jpg"}
                 target="_blank"
