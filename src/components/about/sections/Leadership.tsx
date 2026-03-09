@@ -113,7 +113,7 @@ const Leadership = () => {
                   </div>
                 </div>
 
-                {/* Empty space for alternating layout */}
+               
                 <div className="hidden lg:block w-[calc(50%-4rem)]" />
               </div>
             ))}
