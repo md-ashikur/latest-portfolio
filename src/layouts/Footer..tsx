@@ -56,16 +56,16 @@ const Footer = () => {
   ];
 
   return (
-    <footer ref={footerRef} className="relative bg-gray-900 text-white overflow-hidden">
+    <footer ref={footerRef} className="relative bg-secondary-700 text-white overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-10 py-16 lg:py-20">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-10 pt-10 pb-4 lg:pt-16">
         {/* Main Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-6">
           {/* Brand Section */}
           <div className="footer-item lg:col-span-5">
             <Link href="/" className="inline-block mb-6 group">
@@ -186,7 +186,7 @@ const Footer = () => {
         </div>
 
         {/* Divider with Animation */}
-        <div className="relative h-px bg-white/10 mb-8">
+        <div className="relative h-px bg-white/10 mb-3">
           <div className="absolute inset-0 bg-linear-to-r from-transparent via-primary to-transparent opacity-50" />
         </div>
 
