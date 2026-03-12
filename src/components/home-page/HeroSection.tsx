@@ -1,54 +1,62 @@
 
 import Image from "next/image";
-import ashik from "../../../public/assets/images/ashik.png";
+import ashik from "../../../public/assets/images/head.png";
 import { PiGithubLogoFill } from "react-icons/pi";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6";
+import { SiCodechef } from "react-icons/si";
+import Link from "next/link";
 const HeroSection = () => {
   return (
 
 
     <section className="hero-background">
-     
-      <section className="content" >
-      <div className="relative text-white z-30 mx-auto px-5 lg:px-0 max-w-7xl ">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-20">
-          <div className="my-5">
-            <p className="lg:text-4xl text-2xl font-bold my-2 uppercase tracking-wider z-30">
-              I AM <span className="text-primary font-semibold">MD. ASHIKUR RAHMAN</span>
-            </p>
 
-            <h1 className="text-3xl lg:text-6xl font-extrabold leading-tight">
-              AN ENTHUSIASTIC WEB APPLICATION DEVELOPER
-            </h1>
+      <section className="h-screen" >
+        <div className="relative text-white z-30 mx-auto px-5 lg:px-0 ">
+          <h1 className="lg:text-[200px] text-6xl text-center lg:mt-12 mt-20 font-black">HI, I&apos;M ASHIK</h1>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-20 max-w-300 mx-auto ">
+            <div className="relative top-80">
+              <p className="max-w-98 font-light text-white/60 text-justify">Problem Solver. Full-Stack Developer building fast, scalable web applications.
+                Specialized in Next.js, React, and modern backend architecture. Turning complex ideas into clean, production-ready products.</p>
+            </div>
 
-            <div className="mt-5 flex items-center gap-4">
-              <a href="/assets/files/Ashik-Resume.pdf" className="px-4 py-2 border border-primary rounded-full hover:bg-primary hover:text-black transition-colors duration-300" download>
-                Download Resume
-              </a>
 
-              <div className="flex items-center gap-3">
-                <a href="https://github.com/md-ashikur" target="_blank" aria-label="GitHub" >
-                  <PiGithubLogoFill aria-hidden="true" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300"/>
-                </a>
-                <a href="https://www.linkedin.com/in/md-ashikur-rahman/" target="_blank" aria-label="LinkedIn" >
-                  <FaLinkedinIn aria-hidden="true" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300"/>
-                </a>
-                <a href="https://www.facebook.com/ashikur.rahman999" target="_blank" aria-label="facebook" >
+
+            <div className="flex flex-col items-end gap-4 space-y-4">
+              <div>
+                <Link href="/assets/files/Ashik-Resume.pdf" className="px-8 py-4 border border-primary rounded-full hover:bg-primary uppercase font-bold hover:text-black transition-colors duration-300" download>
+                  Download Resume
+                </Link>
+              </div>
+
+              <div className="flex items-center justify-around gap-4">
+                <Link href="https://github.com/md-ashikur" target="_blank" aria-label="GitHub" >
+                  <PiGithubLogoFill aria-hidden="true" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300" />
+                </Link>
+                <Link href="https://www.linkedin.com/in/md-ashikur-rahman/" target="_blank" aria-label="LinkedIn" >
+                  <FaLinkedinIn aria-hidden="true" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300" />
+                </Link>
+                <Link href="https://www.facebook.com/ashikur.rahman999" target="_blank" aria-label="facebook" >
                   <FaFacebookF aria-hidden="true" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300" />
-                </a>
+                </Link>
+                <Link href="https://www.codechef.com/users/ashik01" target="_blank" aria-label="CodeChef" >
+                  <SiCodechef aria-hidden="true" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300" />
+                </Link>
               </div>
             </div>
+
+
+
           </div>
 
-          <div className="flex justify-end relative lg:mt-2">
-            <div className="relative grayscale hover:grayscale-0 hover:scale-105 transition duration-500 ">
-              <Image src={ashik} alt="Ashik" className="h-auto w-130" />
-            </div>
+          <div className="flex justify-center  lg:mt-2">
+
+            <Image src={ashik} alt="Ashik" className="absolute top-30 h-auto w-120" />
+
           </div>
         </div>
-      </div>
-    </section>
-     <div className="bg-gradiant pt-20  z-50"></div>
+      </section>
+
     </section>
   );
 };

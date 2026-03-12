@@ -46,7 +46,7 @@ const Footer = () => {
     { name: "About", href: "/#about" },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Contact", href: "/#contact" },
-  ];
+  ]; 
 
   const socials = [
     { name: "GitHub", icon: FaGithub, href: "https://github.com/md-ashikur" },
