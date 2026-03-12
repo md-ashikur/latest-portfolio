@@ -5,7 +5,6 @@
     radial-gradient(800px 600px at 85% 20%, rgba(139, 92, 246, 0.08) 0%, rgba(99, 102, 241, 0.06) 10%, transparent 30%),
     linear-gradient(180deg, #03041a 0%, #071036 55%, #04102a 100%);
   overflow: hidden;
-  
 }
 
 .hero-background::before {
@@ -195,5 +194,7 @@
   0%, 100% { opacity: 1;   transform: scale(1); }
   50%       { opacity: 0.4; transform: scale(0.75); }
 }
+
+
 
 
