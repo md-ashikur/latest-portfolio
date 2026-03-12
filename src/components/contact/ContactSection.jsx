@@ -51,11 +51,11 @@ const ContactSection = () => {
     <div ref={parentRef} className="h-100 relative mb-10">
       <div
         ref={sectionRef}
-        className="absolute bottom-5 left-[50%] w-[95%] bg-white/2 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/30 flex items-center z-30"
+        className="absolute bottom-5 left-[50%] w-[95%] bg-white backdrop-blur-sm rounded-2xl overflow-hidden border-2 flex items-center z-30"
         style={{ transform: "translateX(-50%)" }}
       >
         <div className="text-center p-20">
-          <h3 className="text-4xl text-white font-bold">
+          <h3 className="text-4xl text-secondary-700 font-bold">
             Let&apos;s build something great.
           </h3>
           <button className="bg-secondary text-xl font-bold text-white my-4 py-4 px-8 rounded-full hover:bg-secondary transition-colors duration-300">
