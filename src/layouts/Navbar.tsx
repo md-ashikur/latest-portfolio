@@ -103,14 +103,14 @@ const Navbar = () => {
 
           {/* Logo  */}
           <Link href="/" className="navbar-logo" aria-label="Home">
-            <div ref={logoRef} className="font-bold text-white hover:text-primary text-3xl" aria-hidden="true">
+            {/* <div ref={logoRef} className="font-bold text-white hover:text-primary text-3xl" aria-hidden="true">
               {"Ashik".split("").map((char, i) => (
                 <span key={i} className="logo-char">
                   {char}
                 </span>
               ))}
-            </div>
-            <span className="sr-only">Ashik</span>
+            </div> */}
+            {/* <span className="sr-only">Ashik</span> */}
           </Link>
 
           {/* Burger button */}
