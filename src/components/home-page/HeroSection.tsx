@@ -3,7 +3,7 @@ import Image from "next/image";
 import ashik from "../../../public/assets/images/head.png";
 import { PiGithubLogoFill } from "react-icons/pi";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6";
-import { SiCodechef } from "react-icons/si";
+import { SiCodechef, SiLeetcode } from "react-icons/si";
 import Link from "next/link";
 const HeroSection = () => {
   return (
@@ -29,18 +29,21 @@ const HeroSection = () => {
                 </Link>
               </div>
 
-              <div className="flex items-center justify-around gap-4">
-                <Link href="https://github.com/md-ashikur" target="_blank" aria-label="GitHub" >
-                  <PiGithubLogoFill aria-hidden="true" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300" />
+              <div className="flex items-center justify-around gap-2">
+                <Link href="https://github.com/md-ashikur" target="_blank" aria-label="GitHub" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300" >
+                  <PiGithubLogoFill aria-hidden="true" />
                 </Link>
-                <Link href="https://www.linkedin.com/in/md-ashikur-rahman/" target="_blank" aria-label="LinkedIn" >
-                  <FaLinkedinIn aria-hidden="true" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300" />
+                <Link href="https://www.linkedin.com/in/md-ashikur-rahman/" target="_blank" aria-label="LinkedIn" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300">
+                  <FaLinkedinIn aria-hidden="true"  />
                 </Link>
-                <Link href="https://www.facebook.com/ashikur.rahman999" target="_blank" aria-label="facebook" >
-                  <FaFacebookF aria-hidden="true" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300" />
+                <Link href="https://www.facebook.com/ashikur.rahman999" target="_blank" aria-label="facebook" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300" >
+                  <FaFacebookF aria-hidden="true" />
                 </Link>
-                <Link href="https://www.codechef.com/users/ashik01" target="_blank" aria-label="CodeChef" >
-                  <SiCodechef aria-hidden="true" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300" />
+                <Link href="https://www.codechef.com/users/ashik01" target="_blank" aria-label="CodeChef" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300" >
+                  <SiCodechef aria-hidden="true" />
+                </Link>
+                <Link href="https://leetcode.com/u/ashik01/" target="_blank" aria-label="LeetCode" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300" >
+                  <SiLeetcode aria-hidden="true" />
                 </Link>
               </div>
             </div>

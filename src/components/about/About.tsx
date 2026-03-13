@@ -11,6 +11,7 @@ import {
   HiOutlineTrophy,
 } from "react-icons/hi2";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 const skills = [
