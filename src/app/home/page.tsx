@@ -23,7 +23,7 @@ const DEFAULT_STATE = {
 const PATH_STEPS = [
     { x: -100, y: -100, rotate: -80, scale: 1, zIndex: 5 },
     { x: -480, y: -150, rotate: -120, scale: 1.5, zIndex: 7 },
-    { x: -580, y: 80, rotate: -180, scale: 0.6, zIndex: 7 },
+    { x: -600, y: 80, rotate: -180, scale: 0.6, zIndex: 7 },
     // { x: -500, y: 320, rotate: -205, scale: 0.92, zIndex: 7 },
 ];
 
