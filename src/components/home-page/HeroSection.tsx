@@ -127,7 +127,7 @@ const HeroSection = () => {
 
             <div className="flex flex-col lg:items-end gap-4 lg:space-y-2">
               <div className="hero-cta opacity-100">
-                <Link href="/assets/files/Ashik-Resume.pdf" className="hero-cta-btn " download>
+                <Link href="/assets/files/Ashikur Rahman-Resume.pdf" className="hero-cta-btn " download>
                  <button className="px-8 py-4 border border-primary rounded-full hover:bg-primary  uppercase font-bold hover:text-black hover:scale-105 transition-transform duration-300 ease-in-out"> Download Resume</button>
                 </Link>
               </div>

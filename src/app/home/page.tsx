@@ -43,7 +43,7 @@ const HomePage = () => {
                 start: "top 95%",
                 end: "top top",
                 scrub: true,
-                markers: true,
+             
             },
         });
 
