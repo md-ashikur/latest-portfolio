@@ -78,8 +78,6 @@ const HeroSection = () => {
                 Specialized in Next.js, React, and modern backend architecture. Turning complex ideas into clean, production-ready products.</p>
             </div>
 
-
-
             <div className="flex flex-col lg:items-end gap-4 lg:space-y-4">
               <div className="hero-cta">
                 <Link href="/assets/files/Ashik-Resume.pdf" className="px-8 py-4 border border-primary rounded-full hover:bg-primary uppercase font-bold hover:text-black transition-colors duration-300" download>
@@ -100,7 +98,7 @@ const HeroSection = () => {
                 <Link href="https://www.codechef.com/users/ashik01" target="_blank" aria-label="CodeChef" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300" >
                   <SiCodechef aria-hidden="true" />
                 </Link>
-                <Link href="https://leetcode.com/u/ashik01/" target="_blank" aria-label="LeetCode" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300" >
+                <Link href="https://leetcode.com/u/ashikur1/" target="_blank" aria-label="LeetCode" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-black-300 hover:text-primary hover:scale-90 p-2 transition-transform duration-300" >
                   <SiLeetcode aria-hidden="true" />
                 </Link>
               </div>
