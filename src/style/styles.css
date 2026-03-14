@@ -22,6 +22,34 @@
   content: "";
   position: absolute;
   inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+.section-bg {
+  position: relative;
+  background: radial-gradient(250vh 100vw at 10% 15%, rgba(79, 70, 229, 0.22) 0%, rgba(14, 100, 238, 0.12) 12%, transparent 25%),
+    radial-gradient(800px 600px at 85% 20%, rgba(139, 92, 246, 0.08) 0%, rgba(99, 102, 241, 0.06) 10%, transparent 30%),
+    linear-gradient(180deg, #03041a 0%, #071036 55%, #04102a 100%);
+  overflow: hidden;
+}
+
+.section-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(ellipse at center, rgba(6, 13, 39, 0.794), transparent 50%),
+    linear-gradient(180deg, #0000008a 0%, #00000056 75%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+
+.section-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-image:
     repeating-linear-gradient(0deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 2px, transparent 2px, transparent 150px),
     repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 2px, transparent 2px, transparent 150px);
@@ -30,6 +58,8 @@
   pointer-events: none;
   z-index: 2;
 }
+
+
 
 
 .bg-gradiant {
@@ -194,6 +224,12 @@
   0%, 100% { opacity: 1;   transform: scale(1); }
   50%       { opacity: 0.4; transform: scale(0.75); }
 }
+
+@keyframes contactFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
 
 
 

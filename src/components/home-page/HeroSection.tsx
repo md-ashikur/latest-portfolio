@@ -11,6 +11,8 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import StormHeroBackground from "./StormHeroBackground";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,7 +51,7 @@ const HeroSection = () => {
           {
             y: 26,
             opacity: 0,
-          
+
           },
           "-=0.45"
         )
@@ -62,7 +64,7 @@ const HeroSection = () => {
           },
           "-=0.80"
         )
-      
+
         .from(
           ".hero-image",
           {
@@ -114,9 +116,10 @@ const HeroSection = () => {
 
   return (
 
-    <section className="hero-background" ref={sectionRef}>
+    <section className="hero-background relative overflow-hidden" ref={sectionRef}>
+      <StormHeroBackground />
 
-      <section className="h-screen" >
+      <section className="h-screen relative z-10" >
         <div className="relative text-white z-30 mx-auto px-4 lg:px-0 ">
           <h1 className="hero-title lg:text-[200px] text-7xl text-center lg:mt-12 mt-20 font-black">HI, I&apos;M ASHIK</h1>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 items-center lg:mt-20 max-w-300 mx-auto ">
@@ -128,7 +131,7 @@ const HeroSection = () => {
             <div className="flex flex-col lg:items-end gap-4 lg:space-y-2">
               <div className="hero-cta opacity-100">
                 <Link href="/assets/files/Ashikur Rahman-Resume.pdf" className="hero-cta-btn " download>
-                 <button className="px-8 py-4 border border-primary rounded-full hover:bg-primary  uppercase font-bold hover:text-black hover:scale-105 transition-transform duration-300 ease-in-out"> Download Resume</button>
+                  <button className="px-8 py-4 border border-primary rounded-full hover:bg-primary  uppercase font-bold hover:text-black hover:scale-105 transition-transform duration-300 ease-in-out"> Download Resume</button>
                 </Link>
               </div>
 
@@ -137,7 +140,7 @@ const HeroSection = () => {
                   <PiGithubLogoFill aria-hidden="true" className="text-[20px]" />
                 </Link>
                 <Link href="https://www.linkedin.com/in/md-ashikur-rahman/" target="_blank" aria-label="LinkedIn" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center leading-none text-white/80 hover:bg-black-300 hover:text-primary hover:scale-105 p-2 transition-all duration-300">
-                  <FaLinkedinIn aria-hidden="true" className="text-[20px]"  />
+                  <FaLinkedinIn aria-hidden="true" className="text-[20px]" />
                 </Link>
                 <Link href="https://www.facebook.com/ashikur.rahman999" target="_blank" aria-label="facebook" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center leading-none text-white/80 hover:bg-black-300 hover:text-primary hover:scale-105 p-2 transition-all duration-300" >
                   <FaFacebookF aria-hidden="true" className="text-[20px]" />
