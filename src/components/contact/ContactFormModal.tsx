@@ -275,7 +275,7 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
 
   if (!isOpen) return null;
 
-  return createPortal(
+  return (
     <div className="fixed inset-0 flex items-end justify-center z-[60] overflow-y-auto sm:items-start lg:items-center lg:overflow-hidden">
       {/* Darker Overlay */}
       <div
@@ -416,8 +416,7 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
         </div>
 
       </div>
-    </div>,
-    document.body
+    </div>
   );
 };
 

@@ -18,7 +18,7 @@ const allTags = Array.from(
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState<string>("All");
-  
+
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const filterRef = useRef<HTMLDivElement>(null);
@@ -68,7 +68,7 @@ const Portfolio = () => {
       ref={sectionRef}
       className="relative bg-white min-h-screen"
     >
-      <div className="hero-background">
+      <div className="section-bg">
         <section className="content">
           <div className="relative text-white z-30 mx-auto px-5 lg:px-10 max-w-7xl py-16 lg:py-24">
             <Link
@@ -103,11 +103,10 @@ const Portfolio = () => {
         <div ref={filterRef} className="flex flex-wrap justify-center gap-3 mb-16">
           <button
             onClick={() => setActiveFilter("All")}
-            className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
-              activeFilter === "All"
+            className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${activeFilter === "All"
                 ? "bg-primary text-black shadow-lg shadow-primary/30"
                 : "bg-gray-50 text-gray-700 border border-gray-200 hover:border-primary hover:text-primary"
-            }`}
+              }`}
           >
             All Projects
           </button>
@@ -115,11 +114,10 @@ const Portfolio = () => {
             <button
               key={category}
               onClick={() => setActiveFilter(category)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
-                activeFilter === category
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${activeFilter === category
                   ? "bg-primary text-black shadow-lg shadow-primary/30"
                   : "bg-gray-50 text-gray-700 border border-gray-200 hover:border-primary hover:text-primary"
-              }`}
+                }`}
             >
               {category}
             </button>

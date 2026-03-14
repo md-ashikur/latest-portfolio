@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="hero-background">
+      <div className="section-bg">
         <section >
           <div className="relative text-white z-30 mx-auto px-5 lg:px-10 max-w-7xl py-16 lg:py-24">
             <Link
