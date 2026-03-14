@@ -119,11 +119,11 @@ const HeroSection = () => {
     <section className="hero-background relative overflow-hidden" ref={sectionRef}>
       <StormHeroBackground />
 
-      <section className="h-screen relative z-10" >
+      <section className="lg:h-screen relative z-10" >
         <div className="relative text-white z-30 mx-auto px-4 lg:px-0 ">
-          <h1 className="hero-title lg:text-[200px] text-7xl text-center lg:mt-12 mt-20 font-black">HI, I&apos;M ASHIK</h1>
+          <h1 className="hero-title lg:text-[200px] text-6xl text-center lg:mt-12 mt-20 font-black">HI, I&apos;M ASHIK</h1>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 items-center lg:mt-20 max-w-300 mx-auto ">
-            <div className="relative lg:top-80 flex lg:justify-start justify-center mt-5">
+            <div className="relative lg:top-80 flex lg:justify-start justify-center my-5">
               <p className="hero-description lg:max-w-98 font-light text-white/60 text-justify">Problem Solver. Full-Stack Developer building fast, scalable web applications.
                 Specialized in Next.js, React, and modern backend architecture. Turning complex ideas into clean, production-ready products.</p>
             </div>
@@ -153,14 +153,11 @@ const HeroSection = () => {
                 </Link>
               </div>
             </div>
-
-
-
           </div>
 
           <div className="flex justify-center  lg:mt-2">
 
-            <Image src={ashik} alt="Ashik" className="hero-image absolute lg:top-30 h-auto lg:w-120 w-90" />
+            <Image src={ashik} alt="Ashik" className="hero-image relative lg:mb-0 mb-20 lg:absolute lg:top-30 h-auto lg:w-120 w-90" />
 
           </div>
         </div>

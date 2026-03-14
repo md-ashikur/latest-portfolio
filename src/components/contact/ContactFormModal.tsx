@@ -276,7 +276,7 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-end justify-center z-[60] overflow-y-auto sm:items-start lg:items-center lg:overflow-hidden">
+    <div className="fixed inset-0 flex items-end justify-center z-60 overflow-y-auto sm:items-start lg:items-center lg:overflow-hidden">
       {/* Darker Overlay */}
       <div
         ref={overlayRef}
@@ -314,7 +314,7 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
 
             {/* Close button */}
             <button
-              className="absolute top-[18px] right-[18px] flex items-center justify-center w-9 h-9 rounded-full border border-white/10 bg-white/5 text-white/50 cursor-pointer transition-all duration-300 z-20 hover:bg-[#76f5bc1a] hover:border-[#76f5bc40] hover:text-[#76F5BC] hover:rotate-90"
+              className="absolute top-[18px] right-[18px] flex items-center justify-center w-9 h-9 rounded-full border border-white/10 bg-white/5 text-white/50 cursor-pointer transition-all duration-300 z-20 hover:bg-[#76f5bc1a] hover:border-[#76f5bc40] hover:text-primary hover:rotate-90"
               onClick={handleClose}
               aria-label="Close contact form"
             >
@@ -330,7 +330,7 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
 
             {/* Header */}
             <div className="contact-form-item text-center mb-8">
-              <h2 className="text-xl font-extrabold text-white tracking-[0.08em] mb-2 uppercase sm:text-2xl">LET&apos;S WORK TOGETHER</h2>
+              <h2 className="text-xl font-extrabold text-white tracking-3 mb-2 uppercase sm:text-2xl">LET&apos;S WORK TOGETHER</h2>
               <p className="text-[0.85rem] text-white/45 leading-relaxed">
                 Tell me a bit about your project, timeline, and rough budget below...
               </p>
@@ -345,50 +345,50 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
               {/* Name & Email side by side */}
               <div className="contact-form-item grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-4">
                 <div className="relative pt-4">
-                  <label className={`absolute left-[14px] text-[0.9rem] text-white/35 pointer-events-none transition-all duration-300 origin-top-left ${isLabelUp("name") ? "top-[2px] left-[2px] text-[0.7rem] !text-[#76F5BC] tracking-[0.06em] uppercase" : "top-[26px]"}`}>Name</label>
+                  <label className={`absolute left-[14px] text-[0.9rem] text-white/35 pointer-events-none transition-all duration-300 origin-top-left ${isLabelUp("name") ? "top-[2px] left-[2px] text-[0.7rem] text-primary! tracking-[0.06em] uppercase" : "top-[26px]"}`}>Name</label>
                   <input
                     type="text"
-                    className="w-full py-2.5 px-3.5 text-[0.95rem] text-white bg-white/5 border border-white/10 rounded-xl outline-none caret-[#76F5BC] transition-all duration-300 focus:border-[#76f5bc4d] focus:bg-white/10"
+                    className="w-full py-2.5 px-3.5 text-[0.95rem] text-white bg-white/5 border border-white/10 rounded-xl outline-none caret-primary transition-all duration-300 focus:border-primary focus:bg-white/10"
                     value={formData.name}
                     onChange={handleInputChange("name")}
                     onFocus={handleFocus("name")}
                     onBlur={handleBlur("name")}
                     autoComplete="name"
                   />
-                  <div className="relative h-[2px] w-full bg-transparent overflow-hidden -mt-[1px] rounded-b-xl">
-                    <div className={`absolute bottom-0 left-1/2 h-[2px] bg-gradient-to-r from-[#76F5BC] to-[#14e888] transition-all duration-300 -translate-x-1/2 rounded-full ${isLabelUp("name") ? 'w-full' : 'w-0'}`} />
+                  <div className="relative h-[2px] w-full bg-transparent overflow-hidden -mt-px rounded-b-xl">
+                    <div className={`absolute bottom-0 left-1/2 h-[2px] bg-linear-to-r from-primary to-primary-200 transition-all duration-300 -translate-x-1/2 rounded-full ${isLabelUp("name") ? 'w-full' : 'w-0'}`} />
                   </div>
                 </div>
                 <div className="relative pt-4">
-                  <label className={`absolute left-[14px] text-[0.9rem] text-white/35 pointer-events-none transition-all duration-300 origin-top-left ${isLabelUp("email") ? "top-[2px] left-[2px] text-[0.7rem] !text-[#76F5BC] tracking-[0.06em] uppercase" : "top-[26px]"}`}>Email</label>
+                  <label className={`absolute left-[14px] text-[0.9rem] text-white/35 pointer-events-none transition-all duration-300 origin-top-left ${isLabelUp("email") ? "top-[2px] left-[2px] text-[0.7rem] text-primary! tracking-[0.06em] uppercase" : "top-[26px]"}`}>Email</label>
                   <input
                     type="email"
-                    className="w-full py-2.5 px-3.5 text-[0.95rem] text-white bg-white/5 border border-white/10 rounded-xl outline-none caret-[#76F5BC] transition-all duration-300 focus:border-[#76f5bc4d] focus:bg-white/10"
+                    className="w-full py-2.5 px-3.5 text-[0.95rem] text-white bg-white/5 border border-white/10 rounded-xl outline-none caret-primary transition-all duration-300 focus:border-primary focus:bg-white/10"
                     value={formData.email}
                     onChange={handleInputChange("email")}
                     onFocus={handleFocus("email")}
                     onBlur={handleBlur("email")}
                     autoComplete="email"
                   />
-                  <div className="relative h-[2px] w-full bg-transparent overflow-hidden -mt-[1px] rounded-b-xl">
-                    <div className={`absolute bottom-0 left-1/2 h-[2px] bg-gradient-to-r from-[#76F5BC] to-[#14e888] transition-all duration-300 -translate-x-1/2 rounded-full ${isLabelUp("email") ? 'w-full' : 'w-0'}`} />
+                  <div className="relative h-[2px] w-full bg-transparent overflow-hidden -mt-px rounded-b-xl">
+                    <div className={`absolute bottom-0 left-1/2 h-[2px] bg-linear-to-r from-primary to-primary-200 transition-all duration-300 -translate-x-1/2 rounded-full ${isLabelUp("email") ? 'w-full' : 'w-0'}`} />
                   </div>
                 </div>
               </div>
 
               {/* Message */}
               <div className="contact-form-item relative pt-4">
-                <label className={`absolute left-[14px] text-[0.9rem] text-white/35 pointer-events-none transition-all duration-300 origin-top-left ${isLabelUp("message") ? "top-[2px] left-[2px] text-[0.7rem] !text-[#76F5BC] tracking-[0.06em] uppercase" : "top-[26px]"}`}>Your Message</label>
+                <label className={`absolute left-[14px] text-[0.9rem] text-white/35 pointer-events-none transition-all duration-300 origin-top-left ${isLabelUp("message") ? "top-[2px] left-[2px] text-[0.7rem] text-primary! tracking-[0.06em] uppercase" : "top-[26px]"}`}>Your Message</label>
                 <textarea
-                  className="w-full py-2.5 px-3.5 text-[0.95rem] text-white bg-white/5 border border-white/10 rounded-xl outline-none caret-[#76F5BC] transition-all duration-300 focus:border-[#76f5bc4d] focus:bg-white/10 resize-none leading-relaxed min-h-[140px]"
+                  className="w-full py-2.5 px-3.5 text-[0.95rem] text-white bg-white/5 border border-white/10 rounded-xl outline-none caret-primary transition-all duration-300 focus:border-primary focus:bg-white/10 resize-none leading-relaxed min-h-[140px]"
                   rows={6}
                   value={formData.message}
                   onChange={handleInputChange("message")}
                   onFocus={handleFocus("message")}
                   onBlur={handleBlur("message")}
                 />
-                <div className="relative h-[2px] w-full bg-transparent overflow-hidden -mt-[1px] rounded-b-xl">
-                  <div className={`absolute bottom-0 left-1/2 h-[2px] bg-gradient-to-r from-[#76F5BC] to-[#14e888] transition-all duration-300 -translate-x-1/2 rounded-full ${isLabelUp("message") ? 'w-full' : 'w-0'}`} />
+                <div className="relative h-[2px] w-full bg-transparent overflow-hidden -mt-px rounded-b-xl">
+                  <div className={`absolute bottom-0 left-1/2 h-[2px] bg-linear-to-r from-primary to-primary-200 transition-all duration-300 -translate-x-1/2 rounded-full ${isLabelUp("message") ? 'w-full' : 'w-0'}`} />
                 </div>
               </div>
 
@@ -397,7 +397,7 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
                 <button
                   ref={btnRef}
                   type="submit"
-                  className="inline-flex w-full sm:w-auto items-center justify-center py-3 px-8 text-[0.95rem] font-bold text-[#03041a] bg-gradient-to-br from-[#76F5BC] to-[#14e888] rounded-xl cursor-pointer transition-all duration-300 shadow-[0_4px_20px_rgba(118,245,188,0.25),0_0_0_1px_rgba(118,245,188,0.1)] hover:shadow-[0_8px_32px_rgba(118,245,188,0.35),0_0_0_1px_rgba(118,245,188,0.2)]"
+                  className="inline-flex w-full sm:w-auto items-center justify-center py-3 px-8 text-[0.95rem] font-bold text-secondary-800 bg-linear-to-br from-primary to-secondary-600 rounded-xl cursor-pointer transition-all duration-300 shadow-[0_4px_20px_rgba(118,245,188,0.25),0_0_0_1px_rgba(118,245,188,0.1)] hover:shadow-[0_8px_32px_rgba(118,245,188,0.35),0_0_0_1px_rgba(118,245,188,0.2)]"
                   onMouseMove={handleBtnMouseMove}
                   onMouseLeave={handleBtnMouseLeave}
                 >
@@ -406,7 +406,7 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
                 <span className="text-[0.75rem] text-center text-white/30 font-medium uppercase tracking-[0.05em] sm:text-left">OR</span>
                 <a
                   href="mailto:ashik76690@gmail.com"
-                  className="block text-center text-[0.8rem] text-white/45 sm:inline sm:text-left border-b border-white/15 pb-0.5 transition-all duration-300 hover:text-[#76F5BC] hover:border-[#76f5bc66]"
+                  className="block text-center text-[0.8rem] text-white/45 sm:inline sm:text-left border-b border-white/15 pb-0.5 transition-all duration-300 hover:text-primary hover:border-primary"
                 >
                   Send email to ashik76690@gmail.com
                 </a>
