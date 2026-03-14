@@ -20,9 +20,9 @@ interface NavLink {
 }
 
 const NAV_LINKS: NavLink[] = [
-  { label: "About", href: "#about", number: "01" },
-  { label: "Portfolio", href: "#portfolio", number: "02" },
-  { label: "Contact", href: "#contact", number: "03" },
+  { label: "About", href: "/about", number: "01" },
+  { label: "Portfolio", href: "/portfolio", number: "02" },
+  // { label: "Contact", href: "#contact", number: "03" },
 ];
 
 
@@ -41,7 +41,7 @@ const Navbar = () => {
   const overlayRef = useRef<HTMLDivElement>(null);
   const navLinksRef = useRef<HTMLDivElement>(null);
 
- 
+
   useEffect(() => {
     const initialScrolled = typeof window !== "undefined" && window.scrollY > 10;
 
