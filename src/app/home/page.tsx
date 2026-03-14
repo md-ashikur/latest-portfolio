@@ -32,6 +32,17 @@ const HomePage = () => {
     const rocketRef = useRef<HTMLDivElement | null>(null);
 
 
+    const getBaseOffset = (el: HTMLElement) => {
+        let top = 0, left = 0;
+        let curr: HTMLElement | null = el;
+        while (curr) {
+            top += curr.offsetTop;
+            left += curr.offsetLeft;
+            curr = curr.offsetParent as HTMLElement;
+        }
+        return { top, left };
+    };
+
     useGSAP(() => {
         const rocket = rocketRef.current;
         if (!rocket) return;
@@ -43,15 +54,48 @@ const HomePage = () => {
                 start: "top 95%",
                 end: "top top",
                 scrub: true,
-             
+                invalidateOnRefresh: true, // Recalculate dynamic values on resize
             },
         });
 
         tl.set(rocket, DEFAULT_STATE);
         tl.to(rocket, PATH_STEPS[0]);
         tl.to(rocket, PATH_STEPS[1]);
-        tl.to(rocket, PATH_STEPS[2]);
-        // tl.to(rocket, PATH_STEPS[3]);
+
+        // Dynamically compute the final position
+        tl.to(rocket, {
+            ...PATH_STEPS[2],
+            x: () => {
+                const target = document.querySelector('.text-emerald-500.uppercase') as HTMLElement;
+                if (!target || !rocket) return PATH_STEPS[2].x;
+
+                const rBase = getBaseOffset(rocket);
+                const tBase = getBaseOffset(target);
+
+                const targetCenterX = tBase.left + target.offsetWidth / 2;
+                const rocketCenterX = rBase.left + rocket.offsetWidth / 2;
+
+                return targetCenterX - rocketCenterX;
+            },
+            y: () => {
+                const target = document.querySelector('.text-emerald-500.uppercase') as HTMLElement;
+                if (!target || !rocket) return PATH_STEPS[2].y;
+
+                const rBase = getBaseOffset(rocket);
+                const tBase = getBaseOffset(target);
+
+                const targetTop = tBase.top;
+                const rocketCenterY = rBase.top + rocket.offsetHeight / 2;
+
+                // Account for the rocket's scale in the final step (PATH_STEPS[2].scale)
+                const finalScale = PATH_STEPS[2].scale || 1;
+                const scaledHalfHeight = (rocket.offsetHeight / 2) * finalScale;
+                const visualBottomY = rocketCenterY + scaledHalfHeight;
+
+                // Position slightly above the target
+                return targetTop - visualBottomY - 10;
+            }
+        });
 
         return () => {
             tl.scrollTrigger?.kill();
@@ -61,7 +105,7 @@ const HomePage = () => {
 
 
     return (
-        <div ref={containerRef}>
+        <div ref={containerRef} className="overflow-x-hidden">
             <div ref={rocketRef} className="absolute -bottom-30 right-80 z-5">
                 <Rocket />
             </div>
@@ -69,7 +113,7 @@ const HomePage = () => {
             <div className="relative z-6">
                 <About />
             </div>
-            <div className="hero-background">
+            <div className="section-bg">
                 <FeaturedProjects />
                 <ContactSection />
             </div>
