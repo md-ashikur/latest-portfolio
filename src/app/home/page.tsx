@@ -54,7 +54,7 @@ const HomePage = () => {
                 start: "top 95%",
                 end: "top top",
                 scrub: true,
-                invalidateOnRefresh: true, // Recalculate dynamic values on resize
+                invalidateOnRefresh: true, 
             },
         });
 
