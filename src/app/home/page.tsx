@@ -92,7 +92,7 @@ const HomePage = () => {
                 const scaledHalfHeight = (rocket.offsetHeight / 2) * finalScale;
                 const visualBottomY = rocketCenterY + scaledHalfHeight;
 
-                // Position slightly above the target
+               
                 return targetTop - visualBottomY - 10;
             }
         });
