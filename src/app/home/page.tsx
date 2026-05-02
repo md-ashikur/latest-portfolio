@@ -87,7 +87,7 @@ const HomePage = () => {
                 const targetTop = tBase.top;
                 const rocketCenterY = rBase.top + rocket.offsetHeight / 2;
 
-                // Account for the rocket's scale in the final step (PATH_STEPS[2].scale)
+             
                 const finalScale = PATH_STEPS[2].scale || 1;
                 const scaledHalfHeight = (rocket.offsetHeight / 2) * finalScale;
                 const visualBottomY = rocketCenterY + scaledHalfHeight;
