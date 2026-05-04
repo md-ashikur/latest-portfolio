@@ -1,18 +1,16 @@
 import gsap from "gsap";
 
-// ─── Navbar mount: slide down + fade in ──────────────────────────────────────
+// ─── Navbar mount: slide down + fade in ──────
 export const animateNavbarMount = (navbar: HTMLElement | null): void => {
   if (!navbar) return;
   gsap.fromTo(
     navbar,
     { y: -80, opacity: 0, force3D: true },
-    // force3D: true → GSAP always writes translate3d(), keeping the
-    // compositor layer alive so backdrop-filter works in Chrome.
     { y: 0, opacity: 1, duration: 0.9, ease: "power3.out", delay: 0.15, force3D: true }
   );
 };
 
-// ─── Logo word entrance: chars stagger in ────────────────────────────────────
+
 export const animateLogoEntrance = (logo: HTMLElement | null): void => {
   if (!logo) return;
   const chars = logo.querySelectorAll(".logo-char");
@@ -23,7 +21,7 @@ export const animateLogoEntrance = (logo: HTMLElement | null): void => {
   );
 };
 
-// ─── Burger icon → X ─────────────────────────────────────────────────────────
+// ─── Burger icon → X ───
 export const animateBurgerToX = (
   line1: HTMLElement | null,
   line2: HTMLElement | null,
@@ -38,7 +36,7 @@ export const animateBurgerToX = (
     .to(line3, { rotation: -45, duration: 0.25, ease: "power2.out" }, "<");
 };
 
-// ─── X → Burger icon ─────────────────────────────────────────────────────────
+// ─── X → Burger icon ────
 export const animateBurgerToDefault = (
   line1: HTMLElement | null,
   line2: HTMLElement | null,
