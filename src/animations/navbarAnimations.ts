@@ -59,7 +59,7 @@ export const animateDrawerOpen = (
 ): void => {
   if (!drawer || !overlay) return;
 
-  // Make visible before animating
+  
   gsap.set(drawer, { x: "100%", visibility: "visible" });
   gsap.set(overlay, { display: "block" });
 
@@ -67,7 +67,7 @@ export const animateDrawerOpen = (
   tl.to(overlay, { opacity: 1, duration: 0.3, ease: "power2.out" })
     .to(drawer, { x: "0%", duration: 0.5, ease: "power4.out" }, "<0.05");
 
-  // Stagger nav links + decorative elements after drawer arrives
+
   if (navLinks) {
     const items = navLinks.querySelectorAll(".nav-item");
     tl.fromTo(
@@ -79,7 +79,7 @@ export const animateDrawerOpen = (
   }
 };
 
-// ─── Side drawer: slide out to right ─────────────────────────────────────────
+
 export const animateDrawerClose = (
   drawer: HTMLElement | null,
   overlay: HTMLElement | null,
@@ -92,7 +92,7 @@ export const animateDrawerClose = (
     .to(drawer, { x: "100%", duration: 0.45, ease: "power4.in" }, "<");
 };
 
-// ─── Navbar scroll shrink / expand ──────────────────────────────────────────
+
 export const animateNavbarShrink = (navbar: HTMLElement | null): void => {
   if (!navbar) return;
   gsap.to(navbar, { paddingTop: "8px", paddingBottom: "8px", duration: 0.3, ease: "power2.out" });
