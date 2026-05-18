@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useMemo, useState } from "react";
+import { useRef, useEffect, useMemo } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
@@ -124,12 +124,11 @@ const BackgroundMaterial = () => {
   
   const targetMouse = useRef(new THREE.Vector2(0.5, 0.5));
   const currentMouse = useRef(new THREE.Vector2(0.5, 0.5));
-  const [aspectRatio, setAspectRatio] = useState(1);
 
   const uniforms = useMemo(
     () => ({
       uTime: { value: 0 },
-      uResolution: { value: new THREE.Vector2(size.width, size.height) },
+      uResolution: { value: new THREE.Vector2(0, 0) },
       uMouse: { value: new THREE.Vector2(0.5, 0.5) },
     }),
     []
@@ -137,7 +136,6 @@ const BackgroundMaterial = () => {
 
   useEffect(() => {
     uniforms.uResolution.value.set(size.width, size.height);
-    setAspectRatio(size.width / size.height);
   }, [size, uniforms]);
 
   useEffect(() => {
@@ -180,7 +178,7 @@ const BackgroundMaterial = () => {
 
 export const StormHeroBackground = () => {
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden bg-[#03041a]">
+    <div className="absolute inset-0 z-0 overflow-hidden bg-secondary-800">
       <Canvas
         camera={{ position: [0, 0, 1] }}
         dpr={[1, 1.5]} // Safely handles SSR and optimizes performance securely
