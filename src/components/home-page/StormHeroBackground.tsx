@@ -80,7 +80,6 @@ void main() {
     cloudColor = mix(cloudColor, vec3(0.2, 0.25, 0.35), clamp(length(r.x), 0.0, 1.0));
 
     // --- Cursor Light Interaction ---
-    // Distort space for the light to shine through the clouds
     vec2 distortedSt = st + vec2(r.x, r.y) * 0.2; 
     float mouseDist = distance(distortedSt, uMouse);
     
