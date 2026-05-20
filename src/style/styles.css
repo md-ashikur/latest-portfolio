@@ -1,4 +1,4 @@
-/* Hero background visuals: radial spotlight, deep gradient, noise and vignette */
+
 .hero-background {
   position: relative;
   background: radial-gradient(250vh 100vw at 10% 15%, rgba(79, 70, 229, 0.22) 0%, rgba(14, 100, 238, 0.12) 12%, transparent 25%),
