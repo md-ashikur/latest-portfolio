@@ -110,7 +110,7 @@ const Navbar = () => {
                 </span>
               ))}
             </div> */}
-            {/* <span className="sr-only">Ashik</span> */}
+            
           </Link>
 
           {/* Burger button */}
