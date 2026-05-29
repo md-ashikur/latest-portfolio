@@ -101,7 +101,7 @@ const Navbar = () => {
       >
         <div className="flex justify-between items-center max-w-7xl mx-auto px-4 py-4">
 
-          {/* Logo  */}
+       
           <Link href="/" className="navbar-logo" aria-label="Home">
             {/* <div ref={logoRef} className="font-bold text-white hover:text-primary text-3xl" aria-hidden="true">
               {"Ashik".split("").map((char, i) => (
