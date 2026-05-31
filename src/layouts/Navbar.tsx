@@ -129,7 +129,7 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* ── Backdrop overlay */}
+      {/* ── Backdrop overlay ---*/}
       <div
         ref={overlayRef}
         className="backdrop-blur-md cursor-pointer fixed inset-0 z-40 bg-[#02041299]"
