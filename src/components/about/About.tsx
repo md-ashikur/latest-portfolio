@@ -168,7 +168,7 @@ const About = () => {
           </h2>
         </div>
 
-        {/*  BIO + IMAGE ---- */}
+        {/*  BIO */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
 
           <div ref={bioRef}>
