@@ -187,7 +187,7 @@ const Navbar = () => {
           <div className="drawer-footer__dot" />
         </div>
 
-        {/* Decorative accent */}
+    
         <div className="drawer-accent" aria-hidden="true" />
       </nav>
     </div>
