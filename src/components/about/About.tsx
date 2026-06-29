@@ -146,7 +146,7 @@ const About = () => {
   return (
     <section ref={sectionRef} className="relative bg-white overflow-hidden" id="about">
 
-      {/* ── decorative blobs ─────────────────────────────────────────────── */}
+      {/* ── decorative blobs ────── */}
       <div aria-hidden="true" className="pointer-events-none absolute -top-32 -right-32 w-130 h-130 rounded-full"
         style={{ background: "radial-gradient(circle, #76F5BC22 0%, transparent 70%)" }} />
       <div aria-hidden="true" className="pointer-events-none absolute bottom-0 -left-24 w-100 h-100 rounded-full"
@@ -154,7 +154,7 @@ const About = () => {
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-10 py-24 lg:py-32">
 
-        {/* ═══════════════════════  HEADING  ══════════════════════════════ */}
+        {/* ═══════════  HEADING  ═════════════ */}
         <div ref={headingRef} className="text-center mb-20">
           <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-emerald-500 mb-3">
             Who I Am
