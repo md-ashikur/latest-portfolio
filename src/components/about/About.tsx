@@ -154,7 +154,7 @@ const About = () => {
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-10 py-24 lg:py-32">
 
-        {/* ═══════════  HEADING  ═════════════ */}
+        {/* ═══════  HEADING  ════════ */}
         <div ref={headingRef} className="text-center mb-20">
           <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-emerald-500 mb-3">
             Who I Am
